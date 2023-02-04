@@ -6,6 +6,7 @@ public enum eatType
     PURPLE,
     ORANGE,
     GREEN,
+    HEALTH,
 }
 
 public class Eatable : MonoBehaviour

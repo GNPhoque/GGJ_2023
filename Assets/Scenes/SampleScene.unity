@@ -861,6 +861,30 @@ PrefabInstance:
       propertyPath: weatherItemsParent
       value: 
       objectReference: {fileID: 320270895}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[2].green
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[5].green
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[0].purple
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[1].orange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[3].purple
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[4].orange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968217, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: greenValue
       value: 

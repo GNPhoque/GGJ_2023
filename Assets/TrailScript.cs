@@ -13,6 +13,7 @@ public class TrailScript : MonoBehaviour
     public bool isMoving;
     Vector2 targetDirection;
     RootStateMachine stateMachine;
+    
 
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class TrailScript : MonoBehaviour
         trailRenderer = GetComponent<TrailRenderer>();
         rootsManager = transform.parent.GetComponent<RootsManager>();
         stateMachine = GetComponent<RootStateMachine>();
+        
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class TrailScript : MonoBehaviour
             targetDirection = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.instance.GetMousePosition()) - (Vector2)transform.position;
             targetDirection.Normalize();
             transform.position = (Vector2)transform.position + (Vector2)targetDirection * speed * Time.deltaTime;
+            transform.parent.GetComponent<RootsManager>().score += speed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
     void IAmNotSelected()
@@ -61,6 +64,7 @@ public class TrailScript : MonoBehaviour
         if (isMoving)
         {
             transform.position = (Vector2)transform.position + (Vector2)targetDirection * slowSpeed * Time.deltaTime;
+            transform.parent.GetComponent<RootsManager>().score += speed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
 

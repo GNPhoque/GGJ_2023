@@ -7,7 +7,8 @@ public class RootsManager : MonoBehaviour
     public GameObject[] Roots = new GameObject[3];
     public Transform activeRoot;
     int activeIndex;
-
+    [HideInInspector] public float score;
+    public float scoreMultiplier;
 
     void Awake()
     {
@@ -91,5 +92,4 @@ public class RootsManager : MonoBehaviour
         var yb = b.transform.position.x;
         return ya.CompareTo(yb); //here I use the default comparison of floats
     }
-
 }

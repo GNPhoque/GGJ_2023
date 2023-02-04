@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-	Inputs inputs;
+	public Inputs inputs;
 	public bool isMouseClicPressed;
 
 	public static InputManager instance;
@@ -42,7 +42,6 @@ public class InputManager : MonoBehaviour
 
 	public Vector2 GetMousePosition()
 	{
-		print(inputs.Action.MousePosition.ReadValue<Vector2>());
 		return inputs.Action.MousePosition.ReadValue<Vector2>();
 	}
 }

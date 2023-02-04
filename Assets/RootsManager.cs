@@ -72,13 +72,13 @@ public class RootsManager : MonoBehaviour
     void Update()
     {
         System.Array.Sort(Roots, YPositionComparison);
-        Debug.Log(activeIndex);
-        int i = 0;
-        int leftRootIndex = activeIndex == 0 ? 2 : activeIndex - 1;
-        int rightRootIndex = activeIndex == 2 ? 0 : activeIndex + 1;
-        RootArrowRotation[] rotations= activeRoot.GetComponentsInChildren<RootArrowRotation>(true);
-			rotations[0].RotateTo(Roots[leftRootIndex].transform.position);
-			rotations[1].RotateTo(Roots[rightRootIndex].transform.position);
+   //     Debug.Log(activeIndex);
+   //     int i = 0;
+   //     int leftRootIndex = activeIndex == 0 ? 2 : activeIndex - 1;
+   //     int rightRootIndex = activeIndex == 2 ? 0 : activeIndex + 1;
+   //     RootArrowRotation[] rotations= activeRoot.GetComponentsInChildren<RootArrowRotation>(true);
+			//rotations[0].RotateTo(Roots[leftRootIndex].transform.position);
+			//rotations[1].RotateTo(Roots[rightRootIndex].transform.position);
     }
 
     private int YPositionComparison(GameObject a, GameObject b)

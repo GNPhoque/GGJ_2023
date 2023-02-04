@@ -8,6 +8,7 @@ public class TrailScript : MonoBehaviour
     private TrailRenderer trailRenderer;
     RootsManager rootsManager;
     public float speed;
+    public float slowSpeed;
 
     public bool isMoving;
     Vector2 targetDirection;
@@ -31,7 +32,7 @@ public class TrailScript : MonoBehaviour
         }
         else
         {
-
+            IAmNotSelected();
         }
     }
 
@@ -48,12 +49,18 @@ public class TrailScript : MonoBehaviour
 
     void IAmSelected()
     {
-        targetDirection = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.instance.GetMousePosition()) - (Vector2)transform.position;
-        targetDirection.Normalize();
-
+        if(isMoving)
+        {
+            targetDirection = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.instance.GetMousePosition()) - (Vector2)transform.position;
+            targetDirection.Normalize();
+            transform.position = (Vector2)transform.position + (Vector2)targetDirection * speed * Time.deltaTime;
+        }
+    }
+    void IAmNotSelected()
+    {
         if (isMoving)
         {
-            transform.position = (Vector2)transform.position + (Vector2)targetDirection * speed * Time.deltaTime;
+            transform.position = (Vector2)transform.position + (Vector2)targetDirection * slowSpeed * Time.deltaTime;
         }
     }
 

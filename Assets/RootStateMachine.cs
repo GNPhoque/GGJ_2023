@@ -118,12 +118,12 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnEnterInactive()
     {
-        trailScript.isMoving = false;
+
     }
 
     private void OnEnterDead()
     {
-        trailScript.isMoving = false;
+
     }
 
     private void OnUpdateActive()

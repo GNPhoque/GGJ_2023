@@ -48,7 +48,7 @@ public class SpawningManager : MonoBehaviour
             if (spawnPercentage < Random.Range(0f, 1f))
             {
                 //spawn un truc
-                int a = Random.Range(1, 4);
+                int a = Random.Range(1, 5);
                 if(a == 1)
                 {
                     float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
@@ -67,6 +67,15 @@ public class SpawningManager : MonoBehaviour
 
                 }
                 if (a == 3)
+                {
+                    float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                    float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                    GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                    eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                    eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+
+                }
+                if (a == 4)
                 {
                     float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
                     float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);

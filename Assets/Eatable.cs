@@ -19,7 +19,6 @@ public class Eatable : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        myEatType = eatType.PURPLE;
         size = 1;
     }
 

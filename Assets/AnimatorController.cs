@@ -30,7 +30,6 @@ public class AnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(odds);
         currentOddsSwaps -= Time.deltaTime;
         if(currentOddsSwaps <= 0)
         {

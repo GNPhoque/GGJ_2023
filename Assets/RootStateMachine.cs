@@ -31,7 +31,6 @@ public class RootStateMachine : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentState);
         OnStateUpdate(currentState);
     }
 
@@ -129,6 +128,7 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnUpdateActive()
     {
+        transform.GetComponent<SpriteRenderer>().color = Color.green;
         if (rootsManager.activeRoot != transform)
         {
             TransitionToState(RootState.INACTIVE);
@@ -137,11 +137,10 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnUpdateEating()
     {
+        transform.GetComponent<SpriteRenderer>().color = Color.red;
         currentEatingTime -= Time.deltaTime;
         if(currentEatingTime<0)
         {
-
-
             if(rootsManager.activeRoot == transform)
             {
                 TransitionToState(RootState.ACTIVE);
@@ -186,6 +185,9 @@ public class RootStateMachine : MonoBehaviour
             case eatType.GREEN:
                 Player.instance.Green += lastEatable.GetComponent<Eatable>().size;
                 break;
+            case eatType.HEALTH:
+                Player.instance.Hp += lastEatable.GetComponent<Eatable>().size;
+                break;
             default:
                 break;
         }
@@ -207,6 +209,7 @@ public class RootStateMachine : MonoBehaviour
     {
         currentEat = collision.GetComponent<Eatable>().myEatType;
         lastEatable = collision.gameObject;
+        Debug.Log(currentEat);
         TransitionToState(RootState.EATING);
     }
 

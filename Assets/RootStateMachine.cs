@@ -191,6 +191,10 @@ public class RootStateMachine : MonoBehaviour
             default:
                 break;
         }
+
+        trailScript.isMoving = true;
+
+
     }
 
     private void OnExitInactive()
@@ -209,7 +213,6 @@ public class RootStateMachine : MonoBehaviour
     {
         currentEat = collision.GetComponent<Eatable>().myEatType;
         lastEatable = collision.gameObject;
-        Debug.Log(currentEat);
         TransitionToState(RootState.EATING);
     }
 

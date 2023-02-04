@@ -16,6 +16,6 @@ public class ScoreReader : MonoBehaviour
 
     void Update()
     {
-        globalScore.text = rootsManager.score.ToString();
+        globalScore.text = "Score : " + rootsManager.score.ToString();
     }
 }

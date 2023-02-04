@@ -11,6 +11,13 @@ public class SpawningManager : MonoBehaviour
     public float spawnTime;
     public float minSize;
     public float maxSize;
+    public int maxSimilarEatable;
+    public Transform eatableParent;
+    int eatablesPurple;
+    int eatablesOrange;
+    int eatablesGreen;
+    int eatablesHealth;
+
 
     float currentTime;
 
@@ -20,7 +27,6 @@ public class SpawningManager : MonoBehaviour
     public GameObject eatableOrange;
     public GameObject eatableGreen;
     public Transform[] SpawningAreas = new Transform[3];
-    Transform eatables;
 
 
 
@@ -34,11 +40,39 @@ public class SpawningManager : MonoBehaviour
     void Update()
     {
         currentTime -= Time.deltaTime;
+
+
         if(currentTime<=0)
         {
             SpawnEatables();
             currentTime = spawnTime;
         }
+
+        eatablesPurple = 0;
+        eatablesOrange = 0;
+        eatablesGreen = 0;
+        eatablesHealth = 0;
+        foreach (Transform child in eatableParent)
+        {
+            if(child.GetComponent<Eatable>().myEatType == eatType.GREEN)
+            {
+                eatablesGreen++;
+            }
+            if (child.GetComponent<Eatable>().myEatType == eatType.PURPLE)
+            {
+                eatablesPurple++;
+            }
+            if (child.GetComponent<Eatable>().myEatType == eatType.ORANGE)
+            {
+                eatablesOrange++;
+            }
+            if (child.GetComponent<Eatable>().myEatType == eatType.HEALTH)
+            {
+                eatablesHealth++;
+            }
+           
+        }
+        Debug.Log("G" + eatablesGreen + "P" + eatablesPurple + "O" + eatablesOrange + "H" + eatablesHealth);
     }
 
     void SpawnEatables()
@@ -51,38 +85,63 @@ public class SpawningManager : MonoBehaviour
                 int a = Random.Range(1, 5);
                 if(a == 1)
                 {
-                    float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
-                    float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
-                    GameObject eat = Instantiate(eatablePurple, new Vector3(coorX, coorY,0), Quaternion.identity);
-                    eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
-                    eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10,1,2);
+                    if(eatablesPurple >=maxSimilarEatable)
+                    {
+                        a = 2;
+                    }
+                    else
+                    {
+                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                        GameObject eat = Instantiate(eatablePurple, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                    }
                 }
                 if (a == 2)
                 {
-                    float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
-                    float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
-                    GameObject eat = Instantiate(eatableOrange, new Vector3(coorX, coorY, 0), Quaternion.identity);
-                    eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
-                    eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
-
+                    if (eatablesOrange >= maxSimilarEatable)
+                    {
+                        a = 3;
+                    }
+                    else
+                    {
+                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                        GameObject eat = Instantiate(eatableOrange, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                    }
                 }
                 if (a == 3)
                 {
-                    float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
-                    float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
-                    GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
-                    eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
-                    eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
-
+                    if (eatablesGreen >= maxSimilarEatable)
+                    {
+                        a = 4;
+                    }
+                    else
+                    {
+                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                        GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                    }
                 }
                 if (a == 4)
                 {
-                    float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
-                    float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
-                    GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
-                    eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
-                    eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                    if (eatablesHealth >= maxSimilarEatable)
+                    {
 
+                    }
+                    else
+                    {
+                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                        GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                    }
                 }
             }  
         }

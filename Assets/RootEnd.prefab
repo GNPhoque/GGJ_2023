@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 40
+  m_SortingOrder: 6
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,8 +130,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Time: 5000
+  m_SortingOrder: 6
+  m_Time: 500
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -139,8 +139,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0037384033
-        value: 0.06140405
+        time: 0
+        value: 0.18530542
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -148,8 +148,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.24738336
-        value: 0.22807312
+        time: 0.23988366
+        value: 0.31656647
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -157,26 +157,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.3146559
-        value: 0.1386036
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.35948032
-        value: 0.2701804
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.83034766
-        value: 0.033328563
+        time: 0.38211918
+        value: 0.14159778
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -236,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48de5792b9a943e45b481652c42761cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   isMoving: 0
 --- !u!114 &3756491722185021541
 MonoBehaviour:

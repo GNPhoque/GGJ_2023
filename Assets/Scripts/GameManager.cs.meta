@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9ce1129b454f8b6419d6ef6020f8c6eb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weatherItemPrefab: {fileID: 4037256172591316961, guid: 606451bdfd14c044a8333095b57f8e8a, type: 3}
+  - weatherItemsParent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

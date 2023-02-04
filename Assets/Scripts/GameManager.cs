@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 	public float resistanceTickTime;
 	public float resistanceDecay;
 
-	Weather currentWeather;
+	public Weather currentWeather;
 
 	int tickCount;
 	float weatherScrollSpeed;

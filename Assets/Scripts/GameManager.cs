@@ -53,16 +53,16 @@ public class GameManager : MonoBehaviour
 
 	void TickResistance()
 	{
-		Player.instance.Red-= resistanceDecay;
-		Player.instance.Blue-= resistanceDecay;
-		Player.instance.Yellow -= resistanceDecay;
+		Player.instance.Purple-= resistanceDecay;
+		Player.instance.Orange-= resistanceDecay;
+		Player.instance.Green -= resistanceDecay;
 	}
 
 	void TickWeather()
 	{
-		Player.instance.Hp -= currentWeather.red * Player.instance.Red * 0.01f;
-		Player.instance.Hp -= currentWeather.blue * Player.instance.Blue * 0.01f;
-		Player.instance.Hp -= currentWeather.yellow * Player.instance.Yellow * 0.01f;
+		Player.instance.Hp -= currentWeather.purple * Player.instance.Purple * 0.01f;
+		Player.instance.Hp -= currentWeather.orange * Player.instance.Orange * 0.01f;
+		Player.instance.Hp -= currentWeather.green * Player.instance.Green * 0.01f;
 
 		if (++tickCount >= tickCountPerWeather)
 		{

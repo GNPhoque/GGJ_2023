@@ -15,6 +15,7 @@ public class RootStateMachine : MonoBehaviour
     public RootState currentState;
     private TrailScript trailScript;
     RootsManager rootsManager;
+    GameObject lastEatable;
 
     [Header("BalanceSettings")]
     public float eatingTime;
@@ -112,7 +113,7 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnEnterEating()
     {
-        currentEatingTime = eatingTime;
+        currentEatingTime = eatingTime * (lastEatable.GetComponent<Eatable>().size / 7);
         trailScript.isMoving = false;
     }
 
@@ -173,7 +174,21 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnExitEating()
     {
-        //Send Eaten type
+        lastEatable.GetComponent<Collider2D>().enabled = false;
+        switch (currentEat)
+        {
+            case eatType.PURPLE:
+                Player.instance.Purple += lastEatable.GetComponent<Eatable>().size;
+                break;
+            case eatType.ORANGE:
+                Player.instance.Orange += lastEatable.GetComponent<Eatable>().size;
+                break;
+            case eatType.GREEN:
+                Player.instance.Green += lastEatable.GetComponent<Eatable>().size;
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnExitInactive()
@@ -191,6 +206,7 @@ public class RootStateMachine : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         currentEat = collision.GetComponent<Eatable>().myEatType;
+        lastEatable = collision.gameObject;
         TransitionToState(RootState.EATING);
     }
 

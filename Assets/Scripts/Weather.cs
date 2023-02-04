@@ -6,8 +6,8 @@ using UnityEngine;
 [Serializable]
 public class Weather
 {
-	public float red;
-	public float blue;
-	public float yellow;
+	public float purple;
+	public float orange;
+	public float green;
 	public Sprite sprite;
 }

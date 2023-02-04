@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-	[SerializeField] TMP_Text redValue;
-	[SerializeField] TMP_Text blueValue;
-	[SerializeField] TMP_Text yellowValue;
+	[SerializeField] TMP_Text purpleValue;
+	[SerializeField] TMP_Text orangeValue;
+	[SerializeField] TMP_Text greenValue;
 	[SerializeField] TMP_Text healthValue;
 	
-	[SerializeField] TMP_Text weatherRedValue;
-	[SerializeField] TMP_Text weatherBlueValue;
-	[SerializeField] TMP_Text weatherYellowValue;
+	[SerializeField] TMP_Text weatherPurpleValue;
+	[SerializeField] TMP_Text weatherOrangeValue;
+	[SerializeField] TMP_Text weatherGreenValue;
 
 	public static UIManager instance;
 
@@ -24,16 +24,16 @@ public class UIManager : MonoBehaviour
 
 	public void UpdateUI()
 	{
-		redValue.text = $"RED : {Player.instance.Red}";
-		blueValue.text = $"BLUE : {Player.instance.Blue}";
-		yellowValue.text = $"YELLOW : {Player.instance.Yellow}";
+		purpleValue.text = $"RED : {Player.instance.Purple}";
+		orangeValue.text = $"BLUE : {Player.instance.Orange}";
+		greenValue.text = $"YELLOW : {Player.instance.Green}";
 		healthValue.text = $"HEALTH : {Player.instance.Hp}";
 	}
 
 	public void UpdateWeatherUI(Weather weather)
 	{
-		weatherRedValue.text = $"RED : {weather.red}";
-		weatherBlueValue.text = $"BLUE : {weather.blue}";
-		weatherYellowValue.text = $"YELLOW : {weather.yellow}";
+		weatherPurpleValue.text = $"RED : {weather.purple}";
+		weatherOrangeValue.text = $"BLUE : {weather.orange}";
+		weatherGreenValue.text = $"YELLOW : {weather.green}";
 	}
 }

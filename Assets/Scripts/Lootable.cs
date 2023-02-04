@@ -16,13 +16,13 @@ public class Lootable : MonoBehaviour, IPointerClickHandler
 			case LootableType.None:
 				break;
 			case LootableType.Red:
-				Player.instance.Red += value;
+				Player.instance.Purple += value;
 				break;
 			case LootableType.Blue:
-				Player.instance.Blue += value;
+				Player.instance.Orange += value;
 				break;
 			case LootableType.Yellow:
-				Player.instance.Yellow += value;
+				Player.instance.Green += value;
 				break;
 			default:
 				break;

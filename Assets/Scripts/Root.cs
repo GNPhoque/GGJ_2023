@@ -8,7 +8,6 @@ public class Root : MonoBehaviour
 
 	TrailRenderer tr;
 
-	bool activateClick;
 	Vector2 targetDirection;
 
 	private void Awake()
@@ -19,11 +18,10 @@ public class Root : MonoBehaviour
 	private void Update()
 	{
 		transform.position = (Vector2)transform.position + (Vector2)targetDirection * speed * Time.deltaTime;
-		if (activateClick)
+		if (InputManager.instance.isMouseClicPressed)
 		{
 			targetDirection = InputManager.instance.GetMousePosition() - (Vector2)transform.position;
 			targetDirection.Normalize();
 		}
-		Debug.Log(activateClick);
 	}
 }

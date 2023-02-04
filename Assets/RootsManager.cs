@@ -18,6 +18,7 @@ public class RootsManager : MonoBehaviour
         //}
         activeIndex = 0;
         activeRoot = Roots[activeIndex].transform;
+        ShowRootRotation();
     }
 
     private void Start()
@@ -38,9 +39,21 @@ public class RootsManager : MonoBehaviour
             activeIndex = activeIndex + 1;
         }
         activeRoot = Roots[activeIndex].transform;
+        ShowRootRotation();
     }
 
-    private void ChangeRootA_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	private void ShowRootRotation()
+	{
+		//foreach (var root in Roots)
+		//{
+		//	foreach (var rotation in root.GetComponentsInChildren<RootArrowRotation>(true))
+		//	{
+  //              rotation.gameObject.SetActive(root.transform == activeRoot);
+		//	}
+		//}
+	}
+
+	private void ChangeRootA_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         activeIndex = System.Array.IndexOf(Roots, activeRoot.gameObject);
         if(activeIndex ==0)
@@ -52,6 +65,7 @@ public class RootsManager : MonoBehaviour
             activeIndex = activeIndex - 1;
         }
         activeRoot = Roots[activeIndex].transform;
+        ShowRootRotation();
     }
 
     // Update is called once per frame
@@ -59,6 +73,12 @@ public class RootsManager : MonoBehaviour
     {
         System.Array.Sort(Roots, YPositionComparison);
         Debug.Log(activeIndex);
+        int i = 0;
+        int leftRootIndex = activeIndex == 0 ? 2 : activeIndex - 1;
+        int rightRootIndex = activeIndex == 2 ? 0 : activeIndex + 1;
+        RootArrowRotation[] rotations= activeRoot.GetComponentsInChildren<RootArrowRotation>(true);
+			rotations[0].RotateTo(Roots[leftRootIndex].transform.position);
+			rotations[1].RotateTo(Roots[rightRootIndex].transform.position);
     }
 
     private int YPositionComparison(GameObject a, GameObject b)

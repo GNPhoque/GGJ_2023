@@ -14,21 +14,20 @@ public class RootStateMachine : MonoBehaviour
 {
     public RootState currentState;
     private TrailScript trailScript;
+    RootsManager rootsManager;
 
     [Header("BalanceSettings")]
     public float eatingTime;
 
     eatType currentEat;
     float currentEatingTime;
-    public bool isSelected;
 
-    // Start is called before the first frame update
     void Awake()
     {
         trailScript = GetComponent<TrailScript>();
+        rootsManager = transform.parent.GetComponent<RootsManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log(currentState);
@@ -129,7 +128,10 @@ public class RootStateMachine : MonoBehaviour
 
     private void OnUpdateActive()
     {
-
+        if (rootsManager.activeRoot != transform)
+        {
+            TransitionToState(RootState.INACTIVE);
+        }
     }
 
     private void OnUpdateEating()
@@ -137,7 +139,9 @@ public class RootStateMachine : MonoBehaviour
         currentEatingTime -= Time.deltaTime;
         if(currentEatingTime<0)
         {
-            if(isSelected)
+
+
+            if(rootsManager.activeRoot == transform)
             {
                 TransitionToState(RootState.ACTIVE);
             }
@@ -146,11 +150,15 @@ public class RootStateMachine : MonoBehaviour
                 TransitionToState(RootState.INACTIVE);
             }
         }
+
     }
 
     private void OnUpdateInactive()
     {
-
+        if(rootsManager.activeRoot == transform)
+        {
+            TransitionToState(RootState.ACTIVE);
+        }
     }
 
     private void OnUpdateDead()

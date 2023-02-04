@@ -131,7 +131,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Time: 100
+  m_Time: 5000
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -139,8 +139,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.22806817
+        time: 0.0037384033
+        value: 0.06140405
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -148,8 +148,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.21375299
-        value: 0.87719345
+        time: 0.3183825
+        value: 0.64035034
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -157,8 +157,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.49775714
-        value: 0.54211116
+        time: 0.54260695
+        value: 0.27018014
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -167,7 +167,7 @@ TrailRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 0.7219681
-        value: 0.84035176
+        value: 0.7000014
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -175,8 +175,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.8976084
-        value: 0.30526307
+        time: 0.97234595
+        value: 0.2175403
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -252,7 +252,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   eatingTime: 2
-  isSelected: 1
 --- !u!61 &3756491722185021542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -319,7 +318,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3756491722383529123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

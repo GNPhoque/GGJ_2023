@@ -23,9 +23,36 @@ public class InputManager : MonoBehaviour
 		inputs.Enable();
 		inputs.Action.MouseClick.started+= MouseClick_started;
 		inputs.Action.MouseClick.canceled += MouseClick_canceled;
+
+		inputs.Action.ChangeRootA.started += ChangeRootA_started;
+        inputs.Action.ChangeRootA.canceled += ChangeRootA_canceled;
+
+        inputs.Action.ChangeRootE.started += ChangeRootB_started;
+        inputs.Action.ChangeRootE.canceled += ChangeRootB_canceled;
+
 	}
 
-	private void MouseClick_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void ChangeRootB_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+
+    }
+
+    private void ChangeRootB_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+
+    }
+
+    private void ChangeRootA_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+
+    }
+
+    private void ChangeRootA_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+
+    }
+
+    private void MouseClick_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
 	{
 		isMouseClicPressed = false;
 	}

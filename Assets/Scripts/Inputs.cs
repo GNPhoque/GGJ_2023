@@ -44,6 +44,24 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ChangeRootA"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ba85eb7-76fc-40df-9cf7-f248282f041f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeRootE"",
+                    ""type"": ""Button"",
+                    ""id"": ""89650baa-63bf-43b2-8589-caf66822b35e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -68,6 +86,28 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c5e416e-11a1-4e10-a5d1-a4d7e3bae575"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeRootA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3336e7a-106d-401e-ae99-a32fdb1aa91f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeRootE"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -78,6 +118,8 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Action = asset.FindActionMap("Action", throwIfNotFound: true);
         m_Action_MouseClick = m_Action.FindAction("MouseClick", throwIfNotFound: true);
         m_Action_MousePosition = m_Action.FindAction("MousePosition", throwIfNotFound: true);
+        m_Action_ChangeRootA = m_Action.FindAction("ChangeRootA", throwIfNotFound: true);
+        m_Action_ChangeRootE = m_Action.FindAction("ChangeRootE", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,12 +181,16 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private IActionActions m_ActionActionsCallbackInterface;
     private readonly InputAction m_Action_MouseClick;
     private readonly InputAction m_Action_MousePosition;
+    private readonly InputAction m_Action_ChangeRootA;
+    private readonly InputAction m_Action_ChangeRootE;
     public struct ActionActions
     {
         private @Inputs m_Wrapper;
         public ActionActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @MouseClick => m_Wrapper.m_Action_MouseClick;
         public InputAction @MousePosition => m_Wrapper.m_Action_MousePosition;
+        public InputAction @ChangeRootA => m_Wrapper.m_Action_ChangeRootA;
+        public InputAction @ChangeRootE => m_Wrapper.m_Action_ChangeRootE;
         public InputActionMap Get() { return m_Wrapper.m_Action; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -160,6 +206,12 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @MousePosition.started -= m_Wrapper.m_ActionActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_ActionActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_ActionActionsCallbackInterface.OnMousePosition;
+                @ChangeRootA.started -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootA;
+                @ChangeRootA.performed -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootA;
+                @ChangeRootA.canceled -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootA;
+                @ChangeRootE.started -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootE;
+                @ChangeRootE.performed -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootE;
+                @ChangeRootE.canceled -= m_Wrapper.m_ActionActionsCallbackInterface.OnChangeRootE;
             }
             m_Wrapper.m_ActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -170,6 +222,12 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @ChangeRootA.started += instance.OnChangeRootA;
+                @ChangeRootA.performed += instance.OnChangeRootA;
+                @ChangeRootA.canceled += instance.OnChangeRootA;
+                @ChangeRootE.started += instance.OnChangeRootE;
+                @ChangeRootE.performed += instance.OnChangeRootE;
+                @ChangeRootE.canceled += instance.OnChangeRootE;
             }
         }
     }
@@ -178,5 +236,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     {
         void OnMouseClick(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnChangeRootA(InputAction.CallbackContext context);
+        void OnChangeRootE(InputAction.CallbackContext context);
     }
 }

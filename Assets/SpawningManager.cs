@@ -49,7 +49,21 @@ public class SpawningManager : MonoBehaviour
                 int a = Random.Range(1, 4);
                 if(a == 1)
                 {
-                    //Instantiate(eatableOne, new Vector2(transform.GetComponent<BoxCollider2D>().bounds.extents));
+                    float coorX = Random.Range(transform.position.x - transform.GetComponent<BoxCollider2D>().bounds.extents.x, transform.position.x + transform.GetComponent<BoxCollider2D>().bounds.extents.x);
+                    float coorY = Random.Range(transform.position.y - transform.GetComponent<BoxCollider2D>().bounds.extents.y, transform.position.y + transform.GetComponent<BoxCollider2D>().bounds.extents.y);
+                    Instantiate(eatableOne, new Vector3(coorX, coorY,0), Quaternion.identity);
+                }
+                if (a == 2)
+                {
+                    float coorX = Random.Range(transform.position.x - transform.GetComponent<BoxCollider2D>().bounds.extents.x, transform.position.x + transform.GetComponent<BoxCollider2D>().bounds.extents.x);
+                    float coorY = Random.Range(transform.position.y - transform.GetComponent<BoxCollider2D>().bounds.extents.y, transform.position.y + transform.GetComponent<BoxCollider2D>().bounds.extents.y);
+                    Instantiate(eatableTwo, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                }
+                if (a == 3)
+                {
+                    float coorX = Random.Range(transform.position.x - transform.GetComponent<BoxCollider2D>().bounds.extents.x, transform.position.x + transform.GetComponent<BoxCollider2D>().bounds.extents.x);
+                    float coorY = Random.Range(transform.position.y - transform.GetComponent<BoxCollider2D>().bounds.extents.y, transform.position.y + transform.GetComponent<BoxCollider2D>().bounds.extents.y);
+                    Instantiate(eatableThree, new Vector3(coorX, coorY, 0), Quaternion.identity);
                 }
             }  
         }

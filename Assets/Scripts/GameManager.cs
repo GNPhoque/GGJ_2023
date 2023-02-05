@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		weatherScrollSpeed = weatherSpriteWidth / tickCountPerWeather / weatherTickTime;
+		weatherScrollSpeed = weatherSpriteWidth / (tickCountPerWeather * weatherTickTime);
 		SetupWeatherList();
 		currentWeather = weatherList[0];
 		UIManager.instance.UpdateWeatherUI(currentWeather);

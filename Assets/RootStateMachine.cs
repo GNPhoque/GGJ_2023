@@ -15,7 +15,7 @@ public enum RootState
 public class RootStateMachine : MonoBehaviour
 {
     public RootState currentState;
-    public GameObject showGains;
+    public GameObject DisplayGains;
     
     private TrailScript trailScript;
     RootsManager rootsManager;
@@ -183,15 +183,22 @@ public class RootStateMachine : MonoBehaviour
         {
             case eatType.PURPLE:
                 Player.instance.Purple += lastEatable.GetComponent<Eatable>().size;
+                DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.PURPLE, lastEatable.GetComponent<Eatable>().size);
                 break;
             case eatType.ORANGE:
                 Player.instance.Orange += lastEatable.GetComponent<Eatable>().size;
+                DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.ORANGE, lastEatable.GetComponent<Eatable>().size);
+
                 break;
             case eatType.GREEN:
                 Player.instance.Green += lastEatable.GetComponent<Eatable>().size;
+                DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.GREEN, lastEatable.GetComponent<Eatable>().size);
+
                 break;
             case eatType.HEALTH:
                 Player.instance.Hp += lastEatable.GetComponent<Eatable>().size;
+                DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.HEALTH, lastEatable.GetComponent<Eatable>().size);
+
                 break;
             default:
                 break;
@@ -199,8 +206,6 @@ public class RootStateMachine : MonoBehaviour
 
         trailScript.isMoving = true;
 
-        GameObject a = Instantiate(showGains, transform.position, Quaternion.identity);
-        a.GetComponent<DisplayGains>().ShowWhatIAte(lastEatable.GetComponent<Eatable>().size.ToString(), Color.red);
 
 
     }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public enum RootState
@@ -13,6 +15,8 @@ public enum RootState
 public class RootStateMachine : MonoBehaviour
 {
     public RootState currentState;
+    public GameObject showGains;
+    
     private TrailScript trailScript;
     RootsManager rootsManager;
     GameObject lastEatable;
@@ -174,6 +178,7 @@ public class RootStateMachine : MonoBehaviour
     private void OnExitEating()
     {
         lastEatable.GetComponent<Collider2D>().enabled = false;
+
         switch (currentEat)
         {
             case eatType.PURPLE:
@@ -193,6 +198,9 @@ public class RootStateMachine : MonoBehaviour
         }
 
         trailScript.isMoving = true;
+
+        GameObject a = Instantiate(showGains, transform.position, Quaternion.identity);
+        a.GetComponent<DisplayGains>().ShowWhatIAte(lastEatable.GetComponent<Eatable>().size.ToString(), Color.red);
 
 
     }

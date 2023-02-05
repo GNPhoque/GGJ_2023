@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
 
 		//if (++tickCount >= tickCountPerWeather)
 		{
-			Debug.LogError("Change Weather " + Time.time);
 			if (currentWeather.purple == 1)
 			{
 				Player.instance.Hp -= currentWeather.damage * Player.instance.Purple;

@@ -2176,6 +2176,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8365716980473187449, guid: 795149a2b4f80a94ea65f8faba4fa2d0, type: 3}
   m_PrefabInstance: {fileID: 812799315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &874903628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8210645746768055249, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
+  m_PrefabInstance: {fileID: 2132740945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &876653517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2753,6 +2758,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: victory
+      value: 
+      objectReference: {fileID: 874903628}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: resistanceDecay
       value: 2
       objectReference: {fileID: 0}
@@ -2810,7 +2819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: weatherList.Array.data[0].damage
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: weatherList.Array.data[0].purple
@@ -2838,7 +2847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: weatherList.Array.data[1].damage
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: weatherList.Array.data[1].orange

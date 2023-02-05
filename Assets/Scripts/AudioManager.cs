@@ -25,7 +25,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic()
     {
-        loopAudio.PlayOneShot(music);
+        loopAudio.clip = music;
+        loopAudio.Play();
     }
 
     public void PlayHeartSound() => audioSource.PlayOneShot(sfx[0]);

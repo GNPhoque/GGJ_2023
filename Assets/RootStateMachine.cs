@@ -182,21 +182,21 @@ public class RootStateMachine : MonoBehaviour
         switch (currentEat)
         {
             case eatType.PURPLE:
-                Player.instance.Purple += lastEatable.GetComponent<Eatable>().size;
+                Player.instance.Purple += lastEatable.GetComponent<Eatable>().size * 1.5f;
                 DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.PURPLE, lastEatable.GetComponent<Eatable>().size);
                 break;
             case eatType.ORANGE:
-                Player.instance.Orange += lastEatable.GetComponent<Eatable>().size;
+                Player.instance.Orange += lastEatable.GetComponent<Eatable>().size * 1.5f ;
                 DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.ORANGE, lastEatable.GetComponent<Eatable>().size);
 
                 break;
             case eatType.GREEN:
-                Player.instance.Green += lastEatable.GetComponent<Eatable>().size;
+                Player.instance.Green += lastEatable.GetComponent<Eatable>().size * 1.5f ;
                 DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.GREEN, lastEatable.GetComponent<Eatable>().size);
 
                 break;
             case eatType.HEALTH:
-                Player.instance.Hp += lastEatable.GetComponent<Eatable>().size;
+                Player.instance.Hp += lastEatable.GetComponent<Eatable>().size * 1.5f ;
                 DisplayGains.GetComponent<DisplayGains>().ShowWhatIAte(eatType.HEALTH, lastEatable.GetComponent<Eatable>().size);
 
                 break;

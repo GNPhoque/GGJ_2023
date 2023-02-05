@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   myEatType: 0
-  size: 0
+  size: 20
 --- !u!61 &8365716980473187450
 BoxCollider2D:
   m_ObjectHideFlags: 0

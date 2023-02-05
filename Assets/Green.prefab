@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1761453efa987164589fa4b33729244d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   myEatType: 2
-  size: 0
+  size: 20
 --- !u!61 &8365716980473187450
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -38,11 +38,5 @@ public class WeatherControl : MonoBehaviour
             weatherEnvironment[1].SetActive(false);
             weatherEnvironment[2].SetActive(true);
         }
-        else
-        {
-            weatherEnvironment[0].SetActive(true);
-            weatherEnvironment[1].SetActive(false);
-            weatherEnvironment[2].SetActive(false);
-        }
     }
 }

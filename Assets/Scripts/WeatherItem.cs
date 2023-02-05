@@ -10,13 +10,13 @@ public class WeatherItem : MonoBehaviour
 	[SerializeField] GameObject cursor;
 	[SerializeField] TMP_Text timer;
 
-	int i=10;
+	int i=18;
 
 	public void Select()
     {
 		cursor.SetActive(true);
-		timer.text = "10";
-		i = 10;
+		timer.text = "18";
+		i = 18;
     }
 
 	public void UpdateTimer()

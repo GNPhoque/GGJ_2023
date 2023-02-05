@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 	private void Update()
 	{
 		//weatherItemsParent.position -= Vector3.right * weatherScrollSpeed * Time.deltaTime;
+		print(currentResistanceTickTime);
 		currentSecondTickTime += Time.deltaTime;
 		currentWeatherTickTime += Time.deltaTime;
 		currentResistanceTickTime += Time.deltaTime;

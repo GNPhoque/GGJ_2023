@@ -9,6 +9,11 @@ public class UIManager : MonoBehaviour
 	[SerializeField] BarFill orangeValue;
 	[SerializeField] BarFill greenValue;
 	[SerializeField] BarFill healthValue;
+
+	[SerializeField] TMP_Text purpleText;
+	[SerializeField] TMP_Text orangeText;
+	[SerializeField] TMP_Text greenText;
+	[SerializeField] TMP_Text hpText;
 	
 	[SerializeField] BarFill weatherPurpleValue;
 	[SerializeField] BarFill weatherOrangeValue;
@@ -25,9 +30,13 @@ public class UIManager : MonoBehaviour
 	public void UpdateUI()
 	{
 		purpleValue.UpadteFillAmount(Player.instance.Purple);
+		purpleText.text = Mathf.Round(Player.instance.Purple).ToString();
 		orangeValue.UpadteFillAmount(Player.instance.Orange);
+		orangeText.text = Mathf.Round(Player.instance.Orange).ToString();
 		greenValue.UpadteFillAmount(Player.instance.Green);
+		greenText.text = Mathf.Round(Player.instance.Green).ToString();
 		healthValue.UpadteFillAmount(Player.instance.Hp);
+		hpText.text = Mathf.Round(Player.instance.Hp).ToString();
 		print(Player.instance.Hp);
 	}
 

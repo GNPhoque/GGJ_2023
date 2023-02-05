@@ -11,6 +11,8 @@ public class RootsManager : MonoBehaviour
     int activeIndex;
     [HideInInspector] public float score;
     public float scoreMultiplier;
+    public Animator ottoAnimator;
+
 
     void Awake()
     {
@@ -22,6 +24,7 @@ public class RootsManager : MonoBehaviour
         activeIndex = 0;
         activeRoot = Roots[activeIndex].transform;
         ShowRootRotation();
+        
     }
 
     private void Start()
@@ -77,6 +80,7 @@ public class RootsManager : MonoBehaviour
     void Update()
     {
         System.Array.Sort(Roots, YPositionComparison);
+        ottoAnimator.SetFloat("Score", score);
    //     Debug.Log(activeIndex);
    //     int i = 0;
    //     int leftRootIndex = activeIndex == 0 ? 2 : activeIndex - 1;

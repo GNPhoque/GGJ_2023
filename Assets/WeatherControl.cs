@@ -18,8 +18,10 @@ public class WeatherControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("P" + scriptGameManager.currentWeather.purple + "O" + scriptGameManager.currentWeather.orange + "G" + scriptGameManager.currentWeather.green);
         if (Mathf.Max(scriptGameManager.currentWeather.purple, scriptGameManager.currentWeather.orange, scriptGameManager.currentWeather.green) == scriptGameManager.currentWeather.purple)
         {
+            
             weatherEnvironment[0].SetActive(true);
             weatherEnvironment[1].SetActive(false);
             weatherEnvironment[2].SetActive(false);
@@ -28,13 +30,19 @@ public class WeatherControl : MonoBehaviour
         {
             weatherEnvironment[0].SetActive(false);
             weatherEnvironment[1].SetActive(true);
-            weatherEnvironment[1].SetActive(false);
+            weatherEnvironment[2].SetActive(false);
         }
         if (Mathf.Max(scriptGameManager.currentWeather.purple, scriptGameManager.currentWeather.orange, scriptGameManager.currentWeather.green) == scriptGameManager.currentWeather.green)
         {
             weatherEnvironment[0].SetActive(false);
             weatherEnvironment[1].SetActive(false);
-            weatherEnvironment[1].SetActive(true);
+            weatherEnvironment[2].SetActive(true);
+        }
+        else
+        {
+            weatherEnvironment[0].SetActive(true);
+            weatherEnvironment[1].SetActive(false);
+            weatherEnvironment[2].SetActive(false);
         }
     }
 }

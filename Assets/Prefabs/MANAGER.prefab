@@ -79,9 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed0c2e060e852594aa0d9f3ff6b12e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purple: 50
-  orange: 50
-  green: 50
+  purple: 10
+  orange: 10
+  green: 10
   hp: 100
 --- !u!114 &1706523000493968199
 MonoBehaviour:
@@ -95,35 +95,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce1129b454f8b6419d6ef6020f8c6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickCountPerWeather: 15
+  tickCountPerWeather: 10
   weatherTickTime: 1
   weatherSpriteWidth: 63
   weatherList:
-  - purple: 10
+  - purple: 0
+    orange: 0
+    green: 0
+    sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  - purple: 5
     orange: 1
     green: 1
     sprite: {fileID: 21300000, guid: 93757bc660d91e5438e01f444f705f04, type: 3}
   - purple: 1
-    orange: 10
+    orange: 5
     green: 1
     sprite: {fileID: 21300000, guid: 4c76fd7cf5f7e704782184ddaf6344c3, type: 3}
   - purple: 1
     orange: 1
-    green: 10
+    green: 5
     sprite: {fileID: 21300000, guid: bb8c5f4c920399f499c107691fc7eeec, type: 3}
-  - purple: 10
+  - purple: 5
     orange: 1
     green: 1
     sprite: {fileID: 21300000, guid: 93757bc660d91e5438e01f444f705f04, type: 3}
   - purple: 1
-    orange: 10
+    orange: 5
     green: 1
     sprite: {fileID: 21300000, guid: 4c76fd7cf5f7e704782184ddaf6344c3, type: 3}
   - purple: 1
     orange: 1
-    green: 10
+    green: 5
     sprite: {fileID: 21300000, guid: bb8c5f4c920399f499c107691fc7eeec, type: 3}
   weatherItemPrefab: {fileID: 4037256172591316961, guid: 606451bdfd14c044a8333095b57f8e8a, type: 3}
   weatherItemsParent: {fileID: 0}
   resistanceTickTime: 1
   resistanceDecay: 1
+  currentWeather:
+    purple: 0
+    orange: 0
+    green: 0
+    sprite: {fileID: 0}

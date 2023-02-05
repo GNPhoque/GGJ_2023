@@ -26,6 +26,7 @@ public class SpawningManager : MonoBehaviour
     public GameObject eatablePurple;
     public GameObject eatableOrange;
     public GameObject eatableGreen;
+    public GameObject eatableHealth;
     public Transform[] SpawningAreas = new Transform[3];
 
 
@@ -47,6 +48,8 @@ public class SpawningManager : MonoBehaviour
             SpawnEatables();
             currentTime = spawnTime;
         }
+
+        
 
         eatablesPurple = 0;
         eatablesOrange = 0;
@@ -72,7 +75,7 @@ public class SpawningManager : MonoBehaviour
             }
            
         }
-        Debug.Log("G" + eatablesGreen + "P" + eatablesPurple + "O" + eatablesOrange + "H" + eatablesHealth);
+        //Debug.Log("G" + eatablesGreen + "P" + eatablesPurple + "O" + eatablesOrange + "H" + eatablesHealth);
     }
 
     void SpawnEatables()
@@ -88,6 +91,7 @@ public class SpawningManager : MonoBehaviour
                     if(eatablesPurple >=maxSimilarEatable)
                     {
                         a = 2;
+                        Debug.Log("Don't Spawn Purple" );
                     }
                     else
                     {
@@ -96,6 +100,7 @@ public class SpawningManager : MonoBehaviour
                         GameObject eat = Instantiate(eatablePurple, new Vector3(coorX, coorY, 0), Quaternion.identity);
                         eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
                         eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                        eat.transform.parent = eatableParent;
                     }
                 }
                 if (a == 2)
@@ -103,6 +108,8 @@ public class SpawningManager : MonoBehaviour
                     if (eatablesOrange >= maxSimilarEatable)
                     {
                         a = 3;
+                        Debug.Log("Don't Spawn Orange");
+
                     }
                     else
                     {
@@ -111,6 +118,7 @@ public class SpawningManager : MonoBehaviour
                         GameObject eat = Instantiate(eatableOrange, new Vector3(coorX, coorY, 0), Quaternion.identity);
                         eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
                         eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                        eat.transform.parent = eatableParent;
                     }
                 }
                 if (a == 3)
@@ -118,20 +126,7 @@ public class SpawningManager : MonoBehaviour
                     if (eatablesGreen >= maxSimilarEatable)
                     {
                         a = 4;
-                    }
-                    else
-                    {
-                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
-                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
-                        GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
-                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
-                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
-                    }
-                }
-                if (a == 4)
-                {
-                    if (eatablesHealth >= maxSimilarEatable)
-                    {
+                        Debug.Log("Don't Spawn Green");
 
                     }
                     else
@@ -141,6 +136,24 @@ public class SpawningManager : MonoBehaviour
                         GameObject eat = Instantiate(eatableGreen, new Vector3(coorX, coorY, 0), Quaternion.identity);
                         eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
                         eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                        eat.transform.parent = eatableParent;
+                    }
+                }
+                if (a == 4)
+                {
+                    if (eatablesHealth >= maxSimilarEatable)
+                    {
+                        Debug.Log("Don't Spawn Health");
+
+                    }
+                    else
+                    {
+                        float coorX = Random.Range(area.position.x - area.GetComponent<BoxCollider2D>().bounds.extents.x, area.position.x + area.GetComponent<BoxCollider2D>().bounds.extents.x);
+                        float coorY = Random.Range(area.position.y - area.GetComponent<BoxCollider2D>().bounds.extents.y, area.position.y + area.GetComponent<BoxCollider2D>().bounds.extents.y);
+                        GameObject eat = Instantiate(eatableHealth, new Vector3(coorX, coorY, 0), Quaternion.identity);
+                        eat.GetComponent<Eatable>().size = Random.Range(minSize, maxSize);
+                        eat.transform.localScale *= Mathf.Clamp(eat.GetComponent<Eatable>().size / 10, 1, 2);
+                        eat.transform.parent = eatableParent;
                     }
                 }
             }  

@@ -6,6 +6,8 @@ public class RootsManager : MonoBehaviour
 {
     public GameObject[] Roots = new GameObject[3];
     public Transform activeRoot;
+    public float rootSpeed;
+    public float rootSlowSpeed;
     int activeIndex;
     [HideInInspector] public float score;
     public float scoreMultiplier;
@@ -26,6 +28,8 @@ public class RootsManager : MonoBehaviour
     {
         InputManager.instance.inputs.Action.ChangeRootA.performed += ChangeRootA_performed;
         InputManager.instance.inputs.Action.ChangeRootE.performed += ChangeRootE_performed;
+        activeRoot = Roots[activeIndex].transform;
+        activeRoot.transform.GetComponent<TrailScript>().isMoving = true;
     }
 
     private void ChangeRootE_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)

@@ -5,23 +5,22 @@ using UnityEngine;
 
 public class TrailScript : MonoBehaviour
 {
-    private TrailRenderer trailRenderer;
-    RootsManager rootsManager;
-    public float speed;
-    public float slowSpeed;
+    //private TrailRenderer trailRenderer;
+    //RootStateMachine stateMachine;
 
+    RootsManager rootsManager;
     public bool isMoving;
     Vector2 targetDirection;
-    RootStateMachine stateMachine;
     
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        trailRenderer = GetComponent<TrailRenderer>();
+        //trailRenderer = GetComponent<TrailRenderer>();
+        //stateMachine = GetComponent<RootStateMachine>();
+
         rootsManager = transform.parent.GetComponent<RootsManager>();
-        stateMachine = GetComponent<RootStateMachine>();
         
     }
 
@@ -55,16 +54,16 @@ public class TrailScript : MonoBehaviour
         {
             targetDirection = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.instance.GetMousePosition()) - (Vector2)transform.position;
             targetDirection.Normalize();
-            transform.position = (Vector2)transform.position + (Vector2)targetDirection * speed * Time.deltaTime;
-            transform.parent.GetComponent<RootsManager>().score += speed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
+            transform.position = (Vector2)transform.position + (Vector2)targetDirection * rootsManager.rootSpeed * Time.deltaTime;
+            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSpeed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
     void IAmNotSelected()
     {
         if (isMoving)
         {
-            transform.position = (Vector2)transform.position + (Vector2)targetDirection * slowSpeed * Time.deltaTime;
-            transform.parent.GetComponent<RootsManager>().score += speed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
+            transform.position = (Vector2)transform.position + (Vector2)targetDirection * rootsManager.rootSlowSpeed * Time.deltaTime;
+            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSlowSpeed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
 

@@ -4050,6 +4050,10 @@ PrefabInstance:
       propertyPath: rootsManager
       value: 
       objectReference: {fileID: 2074148564}
+    - target: {fileID: 2249405590079722266, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.019989
+      objectReference: {fileID: 0}
     - target: {fileID: 2986449889100444510, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

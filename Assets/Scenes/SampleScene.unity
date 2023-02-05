@@ -651,11 +651,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!224 &320270895 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4213702948014788634, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
-  m_PrefabInstance: {fileID: 2132740945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456316451
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +756,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &467001817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2339849030432231785, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
+  m_PrefabInstance: {fileID: 2132740945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9468a383045df44ad8f5f338cc0da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &489119544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1706523000493968220, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
@@ -2331,11 +2337,99 @@ PrefabInstance:
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: weatherItemsParent
       value: 
-      objectReference: {fileID: 320270895}
+      objectReference: {fileID: 0}
     - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: tickCountPerWeather
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 1493025784}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 1786967058}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 467001817}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[2].green
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[3].green
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[5].green
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[0].purple
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a2ecd88294815d41ba45d417c492734, type: 3}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[1].orange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[1].purple
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc2b7206b1517c04eb15790afd964b65, type: 3}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[2].orange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b78746c3c8962aa46b2639e53a6928bb, type: 3}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[3].purple
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a2ecd88294815d41ba45d417c492734, type: 3}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[4].orange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[4].purple
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc2b7206b1517c04eb15790afd964b65, type: 3}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[5].orange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706523000493968199, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
+      propertyPath: weatherList.Array.data[5].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b78746c3c8962aa46b2639e53a6928bb, type: 3}
     - target: {fileID: 1706523000493968217, guid: 75cf2b3e96a097849bab8f1c42e58065, type: 3}
       propertyPath: greenValue
       value: 
@@ -3434,6 +3528,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8365716980473187449, guid: 624d8b8f4db15d64d97b3446f14264fa, type: 3}
   m_PrefabInstance: {fileID: 1490652229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1493025784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3860552292425359380, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
+  m_PrefabInstance: {fileID: 2132740945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9468a383045df44ad8f5f338cc0da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1525377275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3578,7 @@ MonoBehaviour:
   eatablePurple: {fileID: 8365716980473187452, guid: 624d8b8f4db15d64d97b3446f14264fa, type: 3}
   eatableOrange: {fileID: 8365716980473187452, guid: 795149a2b4f80a94ea65f8faba4fa2d0, type: 3}
   eatableGreen: {fileID: 8365716980473187452, guid: 0ce1b2bcce82d864a8f9de2f8adb666d, type: 3}
-  eatableHealth: {fileID: 0}
+  eatableHealth: {fileID: 8365716980473187452, guid: bdba12f19cf436b4c985ac322a2d3af5, type: 3}
   SpawningAreas:
   - {fileID: 930986261}
   - {fileID: 532738299}
@@ -3557,6 +3662,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdba12f19cf436b4c985ac322a2d3af5, type: 3}
+--- !u!114 &1786967058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8089693292019464722, guid: 8e8791840a7fd034f9438be02dda5279, type: 3}
+  m_PrefabInstance: {fileID: 2132740945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9468a383045df44ad8f5f338cc0da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1890256857
 GameObject:
   m_ObjectHideFlags: 0

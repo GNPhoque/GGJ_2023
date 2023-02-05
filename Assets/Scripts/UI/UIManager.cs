@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
 		orangeValue.UpadteFillAmount(Player.instance.Orange);
 		greenValue.UpadteFillAmount(Player.instance.Green);
 		healthValue.UpadteFillAmount(Player.instance.Hp);
+		print(Player.instance.Hp);
 	}
 
 	public void UpdateWeatherUI(Weather weather)

@@ -8,11 +8,13 @@ public class SceneManagerGO : MonoBehaviour
 
     public void GoToPlayScene()
     {
-         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+         SceneManager.LoadScene(1);
     }
 
     public void GoToMenuScene()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }

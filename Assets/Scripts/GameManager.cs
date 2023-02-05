@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	[SerializeField] GameObject victory;
+
 	float currentSecondTickTime;
 	float currentWeatherTickTime;
 	float currentResistanceTickTime;
@@ -102,17 +104,17 @@ public class GameManager : MonoBehaviour
 		{
 			if (currentWeather.purple == 1)
 			{
-				Player.instance.Hp -= currentWeather.damage * Player.instance.Purple;
+				Player.instance.Hp -= Mathf.Max(currentWeather.damage - Player.instance.Purple, 0f);
 				Player.instance.Purple -= currentWeather.damage;
 			}
 			if (currentWeather.orange== 1)
 			{
-				Player.instance.Hp -= currentWeather.damage * Player.instance.Orange;
+				Player.instance.Hp -= Mathf.Max(currentWeather.damage - Player.instance.Orange,0f);
 				Player.instance.Orange -= currentWeather.damage;
 			}
 			if (currentWeather.green == 1)
 			{
-				Player.instance.Hp -= currentWeather.damage * Player.instance.Green;
+				Player.instance.Hp -= Mathf.Max(currentWeather.damage - Player.instance.Green,0f);
 				Player.instance.Green -= currentWeather.damage;
 			}
 			//Debug.Break();
@@ -139,7 +141,9 @@ public class GameManager : MonoBehaviour
 			else
 			{
 				print("SURVIVED LAST WEATHER");
-				CancelInvoke(); //Stop ticks
+				//CancelInvoke(); //Stop ticks
+				victory.SetActive(true);
+				Time.timeScale = 0;
 			}
 		}
 	}

@@ -55,7 +55,7 @@ public class TrailScript : MonoBehaviour
             targetDirection = (Vector2)Camera.main.ScreenToWorldPoint(InputManager.instance.GetMousePosition()) - (Vector2)transform.position;
             targetDirection.Normalize();
             transform.position = (Vector2)transform.position + (Vector2)targetDirection * rootsManager.rootSpeed * Time.deltaTime;
-            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSpeed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
+            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSpeed * 4 * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
     void IAmNotSelected()
@@ -63,7 +63,7 @@ public class TrailScript : MonoBehaviour
         if (isMoving)
         {
             transform.position = (Vector2)transform.position + (Vector2)targetDirection * rootsManager.rootSlowSpeed * Time.deltaTime;
-            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSlowSpeed * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
+            transform.parent.GetComponent<RootsManager>().score += rootsManager.rootSlowSpeed * 4 * Time.deltaTime * transform.parent.GetComponent<RootsManager>().scoreMultiplier;
         }
     }
 

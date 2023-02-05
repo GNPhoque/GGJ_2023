@@ -16,6 +16,6 @@ public class ScoreReader : MonoBehaviour
 
     void Update()
     {
-        globalScore.text = "Score : " + rootsManager.score.ToString();
+        globalScore.text = "Score : " + Mathf.Floor(rootsManager.score).ToString();
     }
 }

@@ -9,6 +9,6 @@ public class BarFill : MonoBehaviour
 
 	public void UpadteFillAmount(float fillAmount)
 	{
-		fill.fillAmount = fillAmount;
+		fill.fillAmount = fillAmount / 100f;
 	}
 }

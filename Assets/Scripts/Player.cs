@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
 
 	public static Player instance;
 
-	public float Purple { get => purple; set { purple = value; UIManager.instance.UpdateUI(); } }
-	public float Orange { get => orange; set { orange = value; UIManager.instance.UpdateUI(); } }
-	public float Green { get => green; set { green = value; UIManager.instance.UpdateUI(); } }
-	public float Hp { get => hp; set { hp = value; UIManager.instance.UpdateUI(); } }
+	public float Purple { get => purple; set { purple = Mathf.Clamp(value,0f,100f); UIManager.instance.UpdateUI(); } }
+	public float Orange { get => orange; set { orange = Mathf.Clamp(value, 0f, 100f); UIManager.instance.UpdateUI(); } }
+	public float Green { get => green; set { green = Mathf.Clamp(value, 0f, 100f); UIManager.instance.UpdateUI(); } }
+	public float Hp { get => hp; set { hp = Mathf.Clamp(value, 0f, 100f); UIManager.instance.UpdateUI(); } }
 
 	private void Awake()
 	{

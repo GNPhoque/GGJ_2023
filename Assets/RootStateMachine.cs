@@ -214,6 +214,7 @@ public class RootStateMachine : MonoBehaviour
         currentEat = collision.GetComponent<Eatable>().myEatType;
         lastEatable = collision.gameObject;
         TransitionToState(RootState.EATING);
+        collision.GetComponent<Eatable>().StartEating(currentEatingTime);
     }
 
     eatType WhatDidIJustEat()

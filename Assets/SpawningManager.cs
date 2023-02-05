@@ -144,7 +144,6 @@ public class SpawningManager : MonoBehaviour
                     if (eatablesHealth >= maxSimilarEatable)
                     {
                         Debug.Log("Don't Spawn Health");
-
                     }
                     else
                     {
